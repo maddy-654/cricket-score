@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cricket Live Score</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fa;
+      padding: 20px;
+      text-align: center;
+    }
+    .scoreboard {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #007bff;
+    }
+    .score {
+      font-size: 2em;
+      margin: 10px 0;
+    }
+    .input-group {
+      margin-top: 20px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px;
+      font-size: 1em;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scoreboard">
+    <h1>Cricket Live Score</h1>
+    <div id="match">Match: India vs Pakistan</div>
+    <div id="score" class="score">Score: 120/3 (15.2)</div>
+
+    <div class="input-group">
+      <input type="text" id="newScore" placeholder="Enter new score" />
+      <button onclick="updateScore()">Update</button>
+    </div>
+  </div>
+
+  <script>
+    function updateScore() {
+      const input = document.getElementById("newScore");
+      const scoreDiv = document.getElementById("score");
+      if (input.value.trim()) {
+        scoreDiv.innerText = "Score: " + input.value;
+        input.value = "";
+      }
+    }
+  </script>
+
+</body>
+</html>
